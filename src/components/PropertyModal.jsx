@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 
-import { FaChevronLeft, FaChevronRight, FaHeart, FaLocationDot, FaX } from 'react-icons/fa6';
-
+import { FaBed, FaChevronLeft, FaChevronRight, FaHeart, FaLocationDot, FaX } from 'react-icons/fa6';
+import { FaBath, FaRuler } from 'react-icons/fa6';
 // import properties from '../properties';
 
 const PropertyModal = ({onClose, properties}) => {
@@ -41,8 +41,8 @@ const prevImage=()=>{
      <div className='relative bg-ehite rounde-3xl max-w-xl w-full md:max-h-[90vh]
      overflow-y-auto shadow-2xl' onClick={(e)=>e.stopPropagation()}>
 
-
-        <div className="relative h-300px md:h-[400p]">
+{/* Image Slider */}
+        <div className="relative h-[300px] md:h-[400px]">
    <img src={images[currentImageIndex]} className='w-full
    h-full object-cover' alt="" />
 
@@ -96,19 +96,19 @@ const prevImage=()=>{
              gap-6 mb-6 p-4 bg-gray-50 rounded-lg 
         ">
 
-            <div className="flex items-center gap-2">
+            <div className="flex mb-6 p-4 bg-gray-50 rounded-lg gap-6">
                                <FaBed className='text-blue-600'/> 
-                               <span className='text-gray-600'>{properties.beds}</span>
+                               <span className='text-gray-600'>{currentProperty.beds}</span>
                             </div>
                            
                             <div className="flex items-center gap-2">
                                <FaBath className='text-blue-600'/> 
-                               <span className='text-gray-600'>{properties.baths}</span>
+                               <span className='text-gray-600'>{currentProperty.baths}</span>
                             </div>
                            
                             <div className="flex items-center gap-2">
                                <FaRuler className='text-blue-600'/> 
-                               <span className='text-gray-600'>{properties.sqft}</span>
+                               <span className='text-gray-600'>{currentProperty.sqft}</span>
                             </div>
 
 
@@ -116,7 +116,15 @@ const prevImage=()=>{
 
              </div>
 
-             
+         <div className="mb-6">
+            <h3 className='font-semibold mb-2 '>
+                </h3>
+                <p className="text-grey-600">
+                    </p>{currentProperty.description}
+                
+         </div>
+
+   </div>
      </div>
     </div>
   )
