@@ -6,15 +6,18 @@ import { useState } from "react";
 
 function App() {
   const[selectedProperty, setSelectedProperty] = useState(null);
+  console.log('Selected Property:', selectedProperty);
   return (<div  className="min-h-screen w-full bg-gray-50">
     <Home />
     < Featuredroperty setSelectedProperty={setSelectedProperty} />
     <Footer />
 
-    {selectedProperty &&(
-      <PropertyModal proprieties={{selectedProperty}}
-       onClose={()=> setSelectedProperty(null)}
+    {selectedProperty && (
+      
+      <PropertyModal properties={[selectedProperty]}
+      onClose={()=> setSelectedProperty(null)}
       />
+      
     )}
   </div>
   

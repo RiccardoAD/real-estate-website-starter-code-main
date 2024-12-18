@@ -13,18 +13,21 @@ const Featuredroperty = (
 
  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    {properties.map((properties)=>(
-       < div key={properties.id} className="bg-white
+    {properties.map((property)=>(
+       < div key={property.id} className="bg-white
         rounded-2xl drop-shadow-lg overflow-hidden
         hover:shadow-xl hover: scale-105 transition-all duration-300 relative group cursor-pointer"
         
-        onClick={()=> setSelectedProperty(properties)}
+        onClick= {()=> {setSelectedProperty (property)
+         
+         console.log('Selected Property:', property);
+        }}
         >
 
 
 
          <div className='relative'>
-            <img src={properties.image} className='w-full h-72 object-cover
+            <img src={property.image} className='w-full h-72 object-cover
              group-hover:scale-105 transition-transform duration-300' alt="" />
               <button className='absolute top-4 right-4 p-2 rounded-full bg-white/70
               hover:bg-white transition-colors duration-200'>
@@ -35,31 +38,31 @@ const Featuredroperty = (
             <div className="p-6">
               <div className="flex items-center gap-2 text-gray-500 text-sm mb-3 ">
                <FaLocationDot className='text-blue-600' />
-               <span>{properties.location}</span>
+               <span>{property.location}</span>
                </div>
 
               <div className="text-2xl font-bold text-blue-500 mb-2">
-              {properties.price}
+              {property.price}
               </div>  
               <h3 className='text-xl 
-              font-semibold mb-4 text-gray-800'>{properties.title}</h3>
+              font-semibold mb-4 text-gray-800'>{property.title}</h3>
         
             <div className="flex justify-between items-center p-3
             bg-blue-50 rounded-lg">
                 
                 <div className="flex items-center gap-2">
                    <FaBed className='text-blue-600'/> 
-                   <span className='text-gray-600'>{properties.beds}</span>
+                   <span className='text-gray-600'>{property.beds}</span>
                 </div>
                
                 <div className="flex items-center gap-2">
                    <FaBath className='text-blue-600'/> 
-                   <span className='text-gray-600'>{properties.baths}</span>
+                   <span className='text-gray-600'>{property.baths}</span>
                 </div>
                
                 <div className="flex items-center gap-2">
                    <FaRuler className='text-blue-600'/> 
-                   <span className='text-gray-600'>{properties.sqft}</span>
+                   <span className='text-gray-600'>{property.sqft}</span>
                 </div>
                
                
